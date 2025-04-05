@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Project - Forty by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>Forty</strong> <span>by HTML5 UP</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="landing.html">Landing</a></li>
+							<li><a href="generic.html">Generic</a></li>
+							<li><a href="elements.html">Elements</a></li>
+						</ul>
+						<ul class="actions stacked">
+							<li><a href="#" class="button primary fit">Get Started</a></li>
+							<li><a href="#" class="button fit">Log In</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Learning Insights: Visualization Exercise on 
+										</br>	[DP-900T00A-Azure-Data-Fundamentals Datasets] 
+										</br>with Power BI 🎯📊🔍</h1>
+									</header>
+									<span class="image main"><img src="images/dp900-1.PNG" alt="" /></span>
+									
+									<!----->
+									
+									<header class="major">
+										<h3>Dataset Overview 📂📈🔬:</h3>
+									</header>
+									<p>Three data source were provided and accessed with ‘get data from web’ to load and transform the datasets [customers, orders, products]. 
+										Using the query editor the datasets were transformed further by creating dimensions tables [product category, country]; practicing the 
+										process of creating dimensions from datasets to transform a relational model from a star schema to snowflake.
+									</p>
+									<span class="image main"><img src="images/dp900-3.PNG" alt="" /></span>
+									<p>While exploring the ‘orders’ table, I noticed the unit prices for each product was not provided; the ‘product price’ column was added 
+										using a ‘add custom column’ feature and using a division of ‘revenue’ column with ‘quantity’ column.
+									</p>
+
+									<!----->
+
+									<header class="major">
+										<h3>Data Exploration & Visualization 🔍📊🎨:</h3>
+									</header>
+									<p>The visuals selected for visualization: Card, Card(new), Line Chart, Gauge, Matrix and Filter. 
+										It is important to have filters/slicers for interactive visuals.
+										To present the insights on facts such as: Sales, Average Sales, Number of Orders, Number of Customers and Number of Products; 
+										the ‘card’ visual was used and formatted as preferred.
+									</br>
+										For an insight into orders over period of time, line chart was used; likewise for insight into sales by product category. 
+										Each of the line charts were also analyzed with the categorical field (legend) using ‘country’.
+									</p>
+									<span class="image main"><img src="images/dp900-4.PNG" alt="" /></span>
+									<p>To present: maximum and minimum sale record, max. selling product, customer name with max. sale; the card(new) was selected from 
+										the visuals because it provided a multi-card feature.
+									</p>
+
+									<!----->
+									
+									<header class="major">
+										<h3>Key Findings & Interpretation 💡📌📉:</h3>
+									</header>
+									<p>There is a significant difference is recorded sales in the United Kingdom (UK) compared to the United States (US), largely contributed by the drop in 
+										orders received from the US over the period of time, also the sales and orders generated in the “Touring-, Road-, Mountain- Bikes” product category.
+									</p>
+									<span class="image main"><img src="images/dp900-5.PNG" alt="" /></span>																	
+									<p>The highest selling product is “Touring-100 Blue, 60” by summation of sales record; a product from within the Touring Bikes product category. 
+										Similarly, the customer with highest total sales is “Terry Eminhizer”; however, “Touring-100 Blue, 60” and “Terry Eminhizer” do not account for the highest single sale record.
+									</p>
+
+									<!----->
+
+									<header class="major">
+										<h3>Technical Walkthrough🛠️📑⚙️:</h3>
+									</header>
+									<p>Returning the customer name and product name with highest total sales was a challenge with litte knowledge in DAX. 
+										I was able to search online for solutions and found a written step that worked; and I crossed-check using a table to compare the outcome.
+										</br>
+										Below is a copy of my DAX written to create the measures to return customer name and product name with highest total sales:
+										</br>
+										— — — — — — — — — — — — — — — — — — — — —
+										</br>
+										Max Sales by Customer =</br>
+										VAR _maxX = MAXX(VALUES(customers[Name]), CALCULATE(SUM(orders[Sales])))</br>
+										VAR _tempTable = SUMMARIZE(customers, customers[Name], “@Revenue”, SUM(orders[Sales]))</br>
+										VAR _result = CALCULATE(SELECTEDVALUE(customers[Name]), FILTER(_tempTable,[@Revenue] = _maxX))</br>
+										RETURN _result
+										</br>
+										— — — — — — — — — — — — — — — — — — — — —
+										</br>										
+										Max Sales by Product = VAR _maxX = MAXX(VALUES(products[ProductName]), CALCULATE(SUM(orders[Sales])))</br>	
+										VAR _tempTable = SUMMARIZE(products, products[ProductName], “@Revenue”, SUM(orders[Sales]))</br>	
+										VAR _result = CALCULATE( SELECTEDVALUE(products[ProductName]), FILTER(_tempTable,[@Revenue] = _maxX))</br>	
+										RETURN _result
+										</br>
+										— — — — — — — — — — — — — — — — — — — — —
+										</br>
+									</p>									
+
+									<!----->
+
+									<header class="major">
+										<h3>Conclusion & Next Steps 🎯🔭📌:</h3>
+									</header>
+									<p>The exercise was a helpful in practicing my learnings and skills using PowerBI. 
+										An alternative to creating ‘dimensions’ is ‘hierarchy’, but a opportunity to practice dimensions creation to practice data cleaning and 
+										transformation was likewise interesting.
+										</br>
+										For future improvements, I will put consideration on the choice of visuals for situations when a single page report is needed.
+										</br>
+										You can reach out to me with thought on which visuals that could prove useful for further insight on this analysis for my learning.
+									</p>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Contact -->
+				<section id="contact">
+					<div class="inner">
+						<section class="split">
+							<section>
+								<div class="contact-method">
+								<span class="icon solid alt fa-envelope"></span>
+								<h3>Email</h3>
+								<a href="mailto: jesuloluwa.fademi@gmail.com">jesuloluwa.fademi@gmail.com</a>
+								</div>									
+							</section>							
+						</section>
+						<section class="split">
+							<section>									
+								<div class="contact-method">
+								<span class="icon solid alt fa-phone"></span>
+								<h3>Phone</h3>
+								<span>(358) 046-951-4155</span>
+								</div>
+							</section>							
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<ul class="icons">
+							<li><a href="https://github.com/Loluwa993/portfolio-github-pages" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/jesuloluwa-fademi/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy;2025</li><li>Template Design: <a href="https://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
