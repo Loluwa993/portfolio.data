@@ -1,0 +1,15 @@
+.download-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6277f3;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease;
+  }
+  
+  .download-link:hover {
+    background-color: #d5e967;
+  }
+  
