@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SQL Portfolio – Budweiser Analysis</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      padding: 2rem;
+    }
+
+    h1, h2 {
+      color: #1a1a1a;
+    }
+
+    code {
+      padding: 0.3em 0.5em;
+      border-radius: 5px;
+      font-size: 0.95em;
+    }
+
+    pre {
+      background: #272822;
+      color: #ffffff;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin-top: 1rem;
+    }
+
+    .skills, .result, .connect {
+      background: #f1f1f1;
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+
+    .skills ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skills li::before {
+      content: "✓";
+      margin-right: 0.5rem;
+      color: green;
+    }
+
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📊 SQL Project: Brand Consumption Analysis</h1>
+    <h2>Case Study: Budweiser in Nigeria (2019)</h2>
+    <p><strong>Objective:</strong> Analyze Budweiser’s consumption across Nigerian regions in 2019 to guide promotional strategy.</p>
+
+    <div class="skills">
+      <h3>✅ Skills Demonstrated</h3>
+      <ul>
+        <li>Data Aggregation & Grouping</li>
+        <li>Use of CTEs (Common Table Expressions)</li>
+        <li>Business-Oriented SQL Analysis</li>
+        <li>Percentage and KPI Calculations</li>
+        <li>Clean, Readable SQL Formatting</li>
+      </ul>
+    </div>
+
+    <h3>💡 Business Question</h3>
+    <p><em>Which regions in Nigeria consumed the most Budweiser in 2019, and what percentage of total national consumption did each contribute?</em></p>
+
+    <h3>🧠 My Approach</h3>
+    <ol>
+      <li>Calculate total consumption in Nigeria for Budweiser in 2019</li>
+      <li>Use CTE for storing total consumption</li>
+      <li>Aggregate consumption per region</li>
+      <li>Calculate percentage contribution by region</li>
+      <li>Order regions by descending percentage</li>
+    </ol>
+
+    <h3>🔍 SQL Code</h3>
+    <pre><code>WITH Ttl_Qty_Bud_Cons_in_Nig_2019 AS (
+    SELECT SUM(intrnlbrew.quantity) AS Ttl_Qty_Bud_Cons_in_Nig_2019
+    FROM intrnlbrew
+    WHERE Brands = 'budweiser' AND Countries = 'Nigeria' AND years = '2019'
+)
+SELECT 
+    Region, 
+    SUM(intrnlbrew.quantity) AS Qty_Bud_Cons_per_Region_Nig_2019,
+    (SUM(intrnlbrew.quantity) * 100.0) / Ttl_Qty_Bud_Cons_in_Nig_2019 AS Ptge_Bud_Cons_per_Region_Nig_2019
+FROM 
+    intrnlbrew, 
+    Ttl_Qty_Bud_Cons_in_Nig_2019
+WHERE 
+    Brands = 'budweiser' AND 
+    Countries = 'Nigeria' AND 
+    years = '2019'
+GROUP BY 
+    Region, Ttl_Qty_Bud_Cons_in_Nig_2019
+ORDER BY 
+    Ptge_Bud_Cons_per_Region_Nig_2019 DESC;
+</code></pre>
+
+    <div class="result">
+      <h3>🚀 Business Value</h3>
+      <p>
+        This analysis enables the marketing team to identify high-performing regions and target promotional campaigns more effectively. It also highlights potential growth areas in underrepresented regions.
+      </p>
+    </div>
+
+    <div class="connect">
+      <h3>📬 Let’s Connect</h3>
+      <p>Want to uncover insights like this for your brand or team? <a href="#contact">Reach out to collaborate!</a></p>
+    </div>
+  </div>
+</body>
+</html>
