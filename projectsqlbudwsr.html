@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Projects by Jesuloluwa Fademi</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>Portfolio</strong> <span>by FADEMI J.E</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<ul class="links">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="landing.html">Projects</a></li>							
+					</ul>
+					<ul class="actions stacked">
+						<li><a href="landing.html" class="button primary fit">Get Started</a></li>
+						<li><a href="#contact" class="button fit">Contacts</a></li>
+					</ul>
+				</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>SQL: International Breweries Sales Analysis</h1>
+									</header>
+
+									<p>Objective: To analyze International Breweries products level of consumption (sales) across different areas (continent, regions) and support decision-making for promotional targeting.
+									</p>
+									
+									<p>💡Example of Business Question Answered:</br>
+										Which regions in Nigeria had the highest Budweiser consumption in 2019, and what percentage of the total did each contribute?</p>
+									<!----->
+									
+									<header class="major">
+									<h3>🧠 My Approach:</h3>
+									</header>
+									<ul>
+										<li>Calculate total consumption in Nigeria for Budweiser in 2019</li>
+										<li>Use CTE for storing total consumption</li>
+										<li>Aggregate consumption per region</li>
+										<li>Calculate percentage contribution by region</li>
+										<li>Order regions by descending percentage</li>
+									</ul>
+									
+								<header class="major"><h3>🔍 SQL Code</h3></header>
+  								<pre>
+								<code>WITH Ttl_Qty_Bud_Cons_in_Nig_2019 AS 
+(SELECT SUM(intrnlbrew.quantity) AS Ttl_Qty_Bud_Cons_in_Nig_2019
+FROM intrnlbrew
+WHERE Brands = 'budweiser' AND Countries = 'Nigeria' AND years = '2019')
+
+SELECT Region, SUM(intrnlbrew.quantity) AS Qty_Bud_Cons_per_Region_Nig_2019,
+(SUM(intrnlbrew.quantity) * 100.0) / Ttl_Qty_Bud_Cons_in_Nig_2019 AS Ptge_Bud_Cons_per_Region_Nig_2019
+FROM intrnlbrew, Ttl_Qty_Bud_Cons_in_Nig_2019
+WHERE Brands = 'budweiser' AND Countries = 'Nigeria' AND years = '2019'
+GROUP BY Region, Ttl_Qty_Bud_Cons_in_Nig_2019
+ORDER BY Ptge_Bud_Cons_per_Region_Nig_2019 DESC;
+								</code>
+								</pre>
+
+								<ul class="actions">
+									<li><a href="files/SQL CapstoneProject - FADEMI J.sql" class="button next">File: SQL Script</a></li>
+								</ul>
+
+								<p>
+									This analysis enables the marketing team to identify high-performing regions and target promotional campaigns more effectively. It also highlights potential growth areas in underrepresented regions.
+								</p>
+									<!----->
+								
+									<div class="skills">
+										<h3>✅ Skills Demonstrated</h3>
+										<ul>
+										  <li>Data Aggregation & Grouping</li>
+										  <li>Use of CTEs (Common Table Expressions)</li>
+										  <li>Business-Oriented SQL Analysis</li>
+										  <li>Percentage and KPI Calculations</li>
+										  <li>Clean, Readable SQL Formatting</li>
+										</ul>
+									  </div>
+
+									  <header class="major">
+										<h3>🚀 Result & Business Value</h3>
+										</header>
+										<p>This analysis helps marketing teams identify top-consuming regions, making it easier to allocate promo budgets where Budweiser already has strong traction—and spark growth in underperforming regions.
+										</br>
+										Bonus Insight: Using this same logic, I can replicate similar brand analysis across products, countries, or time frames to support dynamic campaign strategies.</p>
+							</div>
+							</section>
+
+					</div>
+
+				<!-- Contact -->
+				<section id="contact">
+					<div class="inner">
+						<section class="split">
+							<section>
+								<div class="contact-method">
+								<span class="icon solid alt fa-envelope"></span>
+								<h3>Email</h3>
+								<a href="mailto: jesuloluwa.fademi@gmail.com">jesuloluwa.fademi@gmail.com</a>
+								</div>									
+							</section>							
+						</section>
+						<section class="split">
+							<section>									
+								<div class="contact-method">
+								<span class="icon solid alt fa-phone"></span>
+								<h3>Phone</h3>
+								<span>(358) 046-951-4155</span>
+								</div>
+							</section>							
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<ul class="icons">
+							<li><a href="https://github.com/Loluwa993/portfolio-github-pages" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/jesuloluwa-fademi/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy;2025</li><li>Template Design: <a href="https://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

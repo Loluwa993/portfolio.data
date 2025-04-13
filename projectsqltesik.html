@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Projects by Jesuloluwa Fademi</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>Portfolio</strong> <span>by FADEMI J.E</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<ul class="links">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="landing.html">Projects</a></li>							
+					</ul>
+					<ul class="actions stacked">
+						<li><a href="landing.html" class="button primary fit">Get Started</a></li>
+						<li><a href="#contact" class="button fit">Contacts</a></li>
+					</ul>
+				</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>SQL: TESIK Business Analysis</h1>
+									</header>
+
+									<p>Performed some analysis on the "TESIK" database using SQL</p>
+
+								<header class="major"><h3>🔍 SQL Code</h3></header>
+  								<pre>
+								<code>select distinct count(r.rfx_id) as "no. of rfx", c.business_sector,
+sum(r.rfx_value) as "total rfx value", sum(r.rfx_value)*100.00 / sum(sum(r.rfx_value)) over() as "% of overall rfx total"
+from clients c
+left join rfx r on c.client_id = r.client_id
+group by c.business_sector
+order by 1 desc;
+								</code>
+								<span class="image main"><img src="images/sqltesik.png" alt=""/></span>
+								</pre>
+
+								<ul class="actions">
+									<li><a href="files/tesik query script.sql" class="button next">File: SQL Script</a></li>
+								</ul>
+
+							
+							<span class="image main"><img src="images/sqltesik2.png" alt=""/></span>
+						</div>
+						</section>
+
+					</div>
+
+				<!-- Contact -->
+				<section id="contact">
+					<div class="inner">
+						<section class="split">
+							<section>
+								<div class="contact-method">
+								<span class="icon solid alt fa-envelope"></span>
+								<h3>Email</h3>
+								<a href="mailto: jesuloluwa.fademi@gmail.com">jesuloluwa.fademi@gmail.com</a>
+								</div>									
+							</section>							
+						</section>
+						<section class="split">
+							<section>									
+								<div class="contact-method">
+								<span class="icon solid alt fa-phone"></span>
+								<h3>Phone</h3>
+								<span>(358) 046-951-4155</span>
+								</div>
+							</section>							
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<ul class="icons">
+							<li><a href="https://github.com/Loluwa993/portfolio-github-pages" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/jesuloluwa-fademi/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy;2025</li><li>Template Design: <a href="https://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
