@@ -53,9 +53,8 @@ I have tried both and have decided to write the code below simply for reference 
 -- Import CSV File
 --CODE EXECUTED; Don't Run the CODE--------------------
 COPY intrnlbrew
-FROM 'C:\Users\USER\Documents\SERVER\ME\Data Analytics Class\PostgreSQL\Capstone Project\International_Breweries.csv'
-DELIMITER ','
-CSV HEADER;
+FROM 'C:/Users/jesul/Documents/GitHub/portfolio.data/files/international breweries.csv'
+WITH (FORMAT 'csv', HEADER, DELIMITER ',');
 ----------------------------------------
 
 -- Displaying the information imported for verification
@@ -67,10 +66,12 @@ inclusive of the anglophone and the francophone territories? */
 
 --ANSWER TO SESSION A: CASE 1
 --CODE EXECUTED; Don't Run the CREATE VIEW CODE--------------------
+GO
 CREATE VIEW Profit_Worth_of_Breweries_in_last_3_years
 AS
 SELECT SUM(PROFIT) AS Total_Profit 
 FROM intrnlbrew;
+GO
 ----------------------------------------
 
 -- Run this next code for the actual answer
