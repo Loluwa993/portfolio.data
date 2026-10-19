@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>BMI Calculator with AlexTheAnalyst Tutorial - Jesuloluwa Fademi</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>Portfolio</strong> <span>by FADEMI J.E</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="landing.html">Projects</a></li>	
+							<li><a href="gallery.html">Gallery</a></li>						
+						</ul>
+						<ul class="actions stacked">
+							<li><a href="landing.html" class="button primary fit">All Projects</a></li>
+							<li><a href="#contact" class="button fit">Contacts</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>BMI Calculator with AlexTheAnalyst Tutorial</h1>
+									</header>
+
+									<header class="major">
+										<h3>Overview 📈🔬:</h3>
+									</header>
+									<p>This project demonstrates automated analysis, calculation algorithms, and business logic implementation built within Python. It focuses on modular code structure, reliable data handling, and actionable output generation.</p>
+
+									<span class="image main"><img src="images/banner_bmi-calculator-project.svg" alt="BMI Calculator with AlexTheAnalyst Tutorial" /></span>
+
+									<header class="major">
+										<h3>Key Features & Objectives:</h3>
+									</header>
+									<ul>
+										<li>Data Extraction &amp; Processing: Robust handling of input parameters and structured datasets.</li>
+										<li>Analytical Computation: Optimized formulas and programmatic conditional evaluations.</li>
+										<li>Clear Output Reporting: Detailed categorization, feedback loops, and metrics interpretation.</li>
+										<li>Modular &amp; Reproducible: Designed for seamless re-execution and integration into production pipelines.</li>
+									</ul>
+
+									<h4>Tools & Technologies Used:</h4>
+									<ul>
+										<li>Jupyter Notebook</li>
+										<li>Python</li>
+									</ul>
+
+
+									<header class="major">
+										<h3>Project Overview &amp; Problem Statement</h3>
+									</header>
+									<p>## Project: BMI Calculator with AlexTheAnalyst Tutorial
+https://mercer-health.com/services/weight-management-center/bmi-calculator#:~:text=Body%20Mass%20Index%2C%20or%20BMI,inches%20x%20height%20in%20inches</p>
+
+									<header class="major">
+										<h3>Technical Walkthrough &amp; Code Implementation</h3>
+									</header>
+									<p>The core computational routine handles data inputs, applies business rules, and outputs verified calculations directly to the console or visual dashboard:</p>
+
+									<pre><code>#BMI = (weight in pounds x 703) / (height in inches x height in inches)
+
+# --- Execution &amp; Logic Steps ---
+
+#Taking input from user
+name = input(&quot;Enter your name: &quot;)
+weight = int(input(&quot;Enter your weight in pounds: &quot;))
+
+height = int(input(&quot;Enter your height in inches: &quot;))
+
+#calculating BMI
+BMI = (weight * 703) / (height **2)
+print(&#x27;BMI is: &#x27;,BMI)
+
+#information on BMI ranges
+#Under 18.5	Underweight	Minimal
+#18.5 - 24.9	Normal Weight	Minimal
+#25 - 29.9	Overweight	Increased
+#30 - 34.9	Obese	High
+#35 - 39.9	Severely Obese	Very High
+#40 and over	Morbidly Obese	Extremely High
+
+
+#presenting the user the review of the calculated BMI
+if BMI &gt; 0:
+    if (BMI&lt;18.5):
+        print(name + &quot;, You are Underweight&quot;)
+    elif (BMI&lt;=24.9):
+        print(name + &quot;, You are Normal weight.&quot;)
+    elif (BMI&lt;=29.9):
+        print(name + &quot;, You are Overweight.&quot;)
+    elif (BMI&lt;=34.9):
+        print(name + &quot;, You are Obese High.&quot;)
+    elif (BMI&lt;=39.9):
+        print(name + &quot;, You are Severely Obese Very High.&quot;)
+    else:
+        print(name + &quot;, You are Morbidly Obese Extremely High.&quot;)
+
+# --- Execution &amp; Logic Steps ---
+
+#printing received values for confirmation
+print(name)
+print (weight,&#x27;lbs&#x27;)
+print (height, &#x27;in&#x27;)</code></pre>
+
+									<ul class="actions">
+										<li><a href="https://github.com/Loluwa993/Data-Analysis/blob/main/BMI%20Calculator%20Project.ipynb" target="_blank" rel="noopener noreferrer" class="button next icon brands fa-github"> View on GitHub</a></li>
+										<li><a href="files/BMI Calculator Project.ipynb" class="button" download>Download BMI Calculator Project.ipynb</a></li>
+									</ul>
+
+									<header class="major">
+										<h3>Business Impact:</h3>
+									</header>
+									<p>Demonstrates automated business calculation, reducing manual computation errors and providing instant, standardized assessments for end users.</p>
+
+									<header class="major">
+										<h3>Conclusion 📌:</h3>
+									</header>
+									<p>The project successfully encapsulates real-world data processing into an interactive script, establishing a foundation for automated reporting and analytical workflows.</p>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Contact -->
+				<section id="contact">
+					<div class="inner">
+						<section class="split">
+							<section>
+								<div class="contact-method">
+								<span class="icon solid alt fa-envelope"></span>
+								<h3>Email</h3>
+								<a href="mailto:jesuloluwa.fademi@gmail.com">jesuloluwa.fademi@gmail.com</a>
+								</div>									
+							</section>							
+						</section>
+						<section class="split">
+							<section>									
+								<div class="contact-method">
+								<span class="icon solid alt fa-phone"></span>
+								<h3>Phone</h3>
+								<span>(358) 046-951-4155</span>
+								</div>
+							</section>							
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<ul class="icons">
+							<li><a href="https://github.com/Loluwa993/portfolio-github-pages" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/jesuloluwa-fademi/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy;2025 Jesuloluwa Fademi</li><li>Template Design: <a href="https://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

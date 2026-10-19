@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#242943" />
+      <stop offset="50%" stop-color="#1e2235" />
+      <stop offset="100%" stop-color="#151824" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9bf6ff" />
+      <stop offset="50%" stop-color="#a0c4ff" />
+      <stop offset="100%" stop-color="#53e3fb" />
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="600" fill="url(#bg)" />
+  <rect width="1200" height="600" fill="url(#grid)" />
+
+  <!-- Abstract Analytics Graphics -->
+  <g opacity="0.35" transform="translate(750, 150)">
+    <!-- Simulated Chart Line -->
+    <path d="M 0 250 Q 80 120 160 180 T 320 80 T 400 30" fill="none" stroke="url(#accent)" stroke-width="4" stroke-dasharray="8 4" />
+    <!-- Bar visuals -->
+    <rect x="20" y="180" width="28" height="120" rx="4" fill="rgba(155, 246, 255, 0.2)" />
+    <rect x="70" y="130" width="28" height="170" rx="4" fill="rgba(155, 246, 255, 0.3)" />
+    <rect x="120" y="90" width="28" height="210" rx="4" fill="rgba(155, 246, 255, 0.4)" />
+    <rect x="170" y="150" width="28" height="150" rx="4" fill="rgba(155, 246, 255, 0.3)" />
+    <rect x="220" y="70" width="28" height="230" rx="4" fill="rgba(83, 227, 251, 0.6)" />
+    <circle cx="234" cy="70" r="6" fill="#9bf6ff" />
+  </g>
+
+  <!-- Title & Info -->
+  <g transform="translate(100, 220)">
+    <!-- Category Badge -->
+    <rect x="0" y="0" width="220" height="36" rx="18" fill="rgba(155, 246, 255, 0.15)" stroke="rgba(155, 246, 255, 0.4)" stroke-width="1.5" />
+    <text x="110" y="23" font-family="'Source Sans Pro', -apple-system, sans-serif" font-size="14" font-weight="600" fill="#9bf6ff" text-anchor="middle" letter-spacing="2">PROJECT SHOWCASE</text>
+
+    <!-- Main Title -->
+    <text x="0" y="90" font-family="'Source Sans Pro', -apple-system, sans-serif" font-size="44" font-weight="700" fill="#ffffff" letter-spacing="1">
+      BMI Calculator with AlexTheAnaly
+    </text>
+    <text x="0" y="145" font-family="'Source Sans Pro', -apple-system, sans-serif" font-size="40" font-weight="700" fill="#ffffff" letter-spacing="1">st Tutorial</text>
+
+    <!-- Tags / Tech Stack -->
+    <text x="0" y="200" font-family="'Source Sans Pro', -apple-system, sans-serif" font-size="18" font-weight="400" fill="rgba(255, 255, 255, 0.7)" letter-spacing="1.5">
+      Jupyter Notebook • Python
+    </text>
+  </g>
+
+  <!-- Accent bottom border -->
+  <rect x="0" y="594" width="1200" height="6" fill="url(#accent)" />
+</svg>
