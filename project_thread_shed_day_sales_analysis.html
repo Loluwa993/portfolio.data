@@ -1,0 +1,274 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Thread Shed Daily Sales Processing Script - Jesuloluwa Fademi</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>Portfolio</strong> <span>by FADEMI J.E</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="landing.html">Projects</a></li>	
+							<li><a href="gallery.html">Gallery</a></li>						
+						</ul>
+						<ul class="actions stacked">
+							<li><a href="landing.html" class="button primary fit">All Projects</a></li>
+							<li><a href="#contact" class="button fit">Contacts</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Thread Shed Daily Sales Processing Script</h1>
+									</header>
+
+									<header class="major">
+										<h3>Overview 📈🔬:</h3>
+									</header>
+									<p>Thread Shed Daily Sales Processing Script
+
+Parses and cleans raw transaction data from an outdated register system, 
+extracting customer names, sale totals, and thread items into structured lists.</p>
+
+									<span class="image main"><img src="images/banner_thread-shed-day-sales-analysis.svg" alt="Thread Shed Daily Sales Processing Script" /></span>
+
+									<header class="major">
+										<h3>Key Features & Objectives:</h3>
+									</header>
+									<ul>
+										<li>Data Cleansing Pipeline: Strips non-standard delimiters, whitespace, and formatting anomalies.</li>
+										<li>Field Extraction &amp; Type Casting: Converts unstructured transaction records into normalized numeric and categorical arrays.</li>
+										<li>Automated Aggregation: Calculates daily gross revenue and itemized category breakdown.</li>
+										<li>Modular Functions: Encapsulates metric reporting into reusable, scalable sub-routines.</li>
+									</ul>
+
+									<h4>Tools & Technologies Used:</h4>
+									<ul>
+										<li>Custom Functions</li>
+										<li>Data Processing</li>
+										<li>Python</li>
+									</ul>
+
+
+									<header class="major">
+										<h3>System Overview &amp; Architecture</h3>
+									</header>
+									<p>Thread Shed Daily Sales Processing Script
+
+Parses and cleans raw transaction data from an outdated register system, 
+extracting customer names, sale totals, and thread items into structured lists.</p>
+
+									<header class="major">
+										<h3>Core Data Processing &amp; Algorithm Implementation</h3>
+									</header>
+									<p>The script implements automated data extraction, string cleansing, price normalization, and sales aggregation routines:</p>
+
+									<pre><code>&quot;&quot;&quot;
+Thread Shed Daily Sales Processing Script
+
+Parses and cleans raw transaction data from an outdated register system, 
+extracting customer names, sale totals, and thread items into structured lists.
+&quot;&quot;&quot;
+
+daily_sales = \
+&quot;&quot;&quot;Edith Mcbride   ;,;$1.21   ;,;   white ;,; 
+09/15/17   ,Herbert Tran   ;,;   $7.29;,; 
+white&amp;blue;,;   09/15/17 ,Paul Clarke ;,;$12.52 
+   ... [Raw transactions dataset truncated for display] ...
+&quot;&quot;&quot;
+
+#------------------------------------------------
+# Start coding below!
+
+# replacing ;,; with another character
+daily_sales_replaced = daily_sales.replace(&quot;;,;&quot;,&quot;^&quot;)
+
+# splitting each transction into its own list
+daily_transactions = daily_sales_replaced.split(&quot;,&quot;)
+
+daily_transactions_split = []
+
+for transaction in daily_transactions:
+  daily_transactions_split.append(transaction.split(&quot;^&quot;))
+
+# cleaning and removing whitespaces in daily_transactions_split
+transactions_clean = []
+for transaction_set in daily_transactions_split:
+  cleaned_set = []
+  for details in transaction_set:
+    cleaned_set.append(details.replace(&quot;\n&quot;,&quot;&quot;).strip(&quot; &quot;))
+  transactions_clean.append(cleaned_set)
+
+
+# create 3 new list and collect individual data from cleaned data
+customers = []
+sales = []
+thread_sold = []
+
+# iterating through the cleaned data and appending to respective list
+for cleaned_transaction in transactions_clean:
+  customers.append(cleaned_transaction[0])
+  sales.append(cleaned_transaction[1])
+  thread_sold.append(cleaned_transaction[2])
+
+
+# calculating total sales for the day
+# transforming each entry in sales list to float datatype
+total_sale = 0
+for sale in sales:
+  total_sale += float(sale.strip(&quot;$&quot;))
+
+total_sales = round(total_sale,2)
+
+print(&#x27;Total Sales for today: ${}&#x27;.format(total_sales))
+
+
+# calculating quantity of thread sold
+# splitting the thread_sold list
+thread_sold_split = []
+
+for item in thread_sold:
+  if not &quot;&amp;&quot; in item:
+    thread_sold_split.append(item)
+  else:
+    for inner in item.split(&quot;&amp;&quot;):
+      thread_sold_split.append(inner)
+  
+# function to count thread by color
+def color_count(color):
+ counter = 0
+ for thread in thread_sold_split:
+   if color == thread:
+     counter += 1
+ return f&#x27;Total Number of {color} thread sold: {counter}&#x27;
+
+colors = []
+for color in thread_sold_split:
+  if not color in colors:
+    colors.append(color)
+
+
+# calling the function for thread color
+for color in colors:
+  print(color_count(color))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</code></pre>
+
+									<ul class="actions">
+										<li><a href="https://github.com/Loluwa993/Data-Analysis/blob/main/Python%20Jupyter/Thread%20Shed%20Day%20Sales%20Analysis.py" target="_blank" rel="noopener noreferrer" class="button next icon brands fa-github"> View on GitHub</a></li>
+										<li><a href="files/Thread Shed Day Sales Analysis.py" class="button" download>Download Thread Shed Day Sales Analysis.py</a></li>
+									</ul>
+
+									<header class="major">
+										<h3>Business Impact:</h3>
+									</header>
+									<p>Transforms messy, legacy register logs into clean business intelligence, accurately reporting total daily sales revenue and itemized product performance.</p>
+
+									<header class="major">
+										<h3>Conclusion 📌:</h3>
+									</header>
+									<p>The pipeline establishes an automated, reproducible workflow for transaction auditing, inventory monitoring, and operational reporting.</p>
+								</div>
+							</section>
+
+					</div>
+
+				<!-- Contact -->
+				<section id="contact">
+					<div class="inner">
+						<section class="split">
+							<section>
+								<div class="contact-method">
+								<span class="icon solid alt fa-envelope"></span>
+								<h3>Email</h3>
+								<a href="mailto:jesuloluwa.fademi@gmail.com">jesuloluwa.fademi@gmail.com</a>
+								</div>									
+							</section>							
+						</section>
+						<section class="split">
+							<section>									
+								<div class="contact-method">
+								<span class="icon solid alt fa-phone"></span>
+								<h3>Phone</h3>
+								<span>(358) 046-951-4155</span>
+								</div>
+							</section>							
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<ul class="icons">
+							<li><a href="https://github.com/Loluwa993/portfolio-github-pages" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/jesuloluwa-fademi/" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy;2025 Jesuloluwa Fademi</li><li>Template Design: <a href="https://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
